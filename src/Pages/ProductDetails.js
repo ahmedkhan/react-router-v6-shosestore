@@ -1,21 +1,43 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
-import { Data}  from '../services/dummy';
+import { fetchData } from '../services/Api';
+
+
 
 export const ProductDetails = () => {
-    const { slug } = useParams();
-    const shoe = Data[slug];
 
-    if (!shoe) {
-        return <h2>Not Found!</h2>;
-      }
+    const [products,setProducts] = useState([]); 
+     
     
-      const { name, img } = shoe;
+    useEffect(() => {
+        const fetchMyAPI = async () => {
+          const initialDailyData = await fetchData();
+    
+          setProducts(initialDailyData);
+        };
+    
+        fetchMyAPI();
+      }, []);
+
+
+    const { slug } = useParams();    
+
+    function findProductBySlug(slug) {
+      return products.find(o => o.slug === slug);
+}
+
+    const product  = findProductBySlug(slug);
+     if (!product)
+        return <h1>Loading...</h1>
+     
+    const {title,image,price} = product;   
     
     return (
-        <div>        
-            <h2>{name}</h2>
-            <img src={img} alt={name} />
+       
+        <div>
+           <h1>{title}</h1>
+           <img src={image} alt=''/>
+           <h3>{price}</h3>     
         </div>
     )
 }

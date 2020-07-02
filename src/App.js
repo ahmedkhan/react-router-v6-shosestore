@@ -7,7 +7,7 @@ import { NavBar } from './components/NavBar';
 import { ProductIndex } from './Pages/ProductIndex';
 import { ProductDetails } from './Pages/ProductDetails';
 
-
+ 
 function App() {
   return (
     <Router>
