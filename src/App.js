@@ -1,25 +1,34 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
+import React, { useContext } from 'react';
+import { Routes, Route, Link } from "react-router-dom";
+import listContext from './contexts/list_context';
+import List from './components/List';
+import Cart from './components/Cart';
+import ProductDetails from './components/ProductDetails';
+import {CartIcon} from '../src/components/icons';
+import {HomeIcon} from '../src/components/icons';
 
-import { Home } from './Pages/home';
-import { Products } from './Pages/Products';
-import { NavBar } from './components/NavBar';
-import { ProductIndex } from './Pages/ProductIndex';
-import { ProductDetails } from './Pages/ProductDetails';
+import styles from './components/shared/ProductsGrid.module.scss';
+import About from './components/About';
 
- 
+
+
 function App() {
+  const { cartCount } = useContext(listContext);
+
   return (
-    <Router>
-      <NavBar />
+    <div>
+      <div className={styles.header}>
+        <Link to='/'><HomeIcon/> Store</Link>
+        <Link to='/about'>About</Link>
+        <Link to='/cart'><CartIcon/> Cart ({cartCount})</Link>
+      </div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/product" element={<Products />}>
-          <Route path="/" element={<ProductIndex />} />
-          <Route path=":slug" element={<ProductDetails />} />
-        </Route>
+        <Route path='/' element={<List/>}/>
+        <Route path='/about' element={<About/>}></Route>
+        <Route path=":slug" element={<ProductDetails />} />        
+        <Route path='/cart' element={<Cart/>} />
       </Routes>
-    </Router>
+    </div>
   );
 }
 

@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import { BrowserRouter as Router } from "react-router-dom";
+import Store from './contexts/Store'
 
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const render = 
+<Store>
+    <Router>
+        <App/>
+    </Router>
+</Store>
 
+ReactDOM.render(render, document.getElementById('root'));

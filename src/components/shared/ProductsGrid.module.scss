@@ -1,0 +1,32 @@
+.p {
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 15px;
+    }
+}
+.logo {
+    display:block;
+    margin: 10px auto;
+    width: 100px;
+}
+
+.footer {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+}
+.header {
+    padding: 10px;
+    text-align: center;
+
+    a {
+        display: inline-block;
+        margin-right: 10px;
+        padding: 5px 10px;
+        svg {
+            width: 18px;
+            margin-right: 5px;
+        }
+    }
+}
