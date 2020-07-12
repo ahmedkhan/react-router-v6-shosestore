@@ -47,13 +47,12 @@ function Cart() {
   if (cart.length > 0) {
 
     return (
-
-      <div >
-        <div className="text-center mt-5">
-          <h1>Cart</h1>
-          <p>This is the Cart Page.</p>
-        </div>
+      <div className="text-center mt-5">
+        <h1>Cart</h1>
+        <p>This is the Cart Page.</p>
+        <br />
         {cartlist}
+
       </div>
     )
 
