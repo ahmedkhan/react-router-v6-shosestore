@@ -3,7 +3,7 @@ import listContext from '../contexts/list_context';
 import { useProducts } from '../custom-hooks/';
 import { Link } from 'react-router-dom';
 import { formatNumber } from '../helpers/utils';
-import styles from '../components/shared/ProductsGrid.module.scss';
+import styles from '../components/shared/ProductsGrid.module.css';
 
 
 function List() {

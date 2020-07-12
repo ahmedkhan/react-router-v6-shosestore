@@ -7,7 +7,7 @@ import ProductDetails from './components/ProductDetails';
 import {CartIcon} from '../src/components/icons';
 import {HomeIcon} from '../src/components/icons';
 
-import styles from './components/shared/ProductsGrid.module.scss';
+import styles from './components/shared/ProductsGrid.module.css';
 import About from './components/About';
 
 
