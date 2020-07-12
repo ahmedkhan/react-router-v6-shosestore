@@ -15,9 +15,9 @@ function List() {
   const pdlist = products.map((i, index) => {
 
     return <div className="card card-body" key={index}>
-      <Link to={`/${i.fields.slug}`}>
-        <strong className="text-left">{i.fields.title}</strong>
-        <img
+             <Link to={`/${i.fields.slug}`}>
+              <strong className="text-left">{i.fields.title}</strong>
+           <img
           style={{ display: "block", margin: "0 auto 10px", maxHeight: "200px" }}
           className="img-fluid"
           src={i.fields.image.fields.file.url}
@@ -29,6 +29,7 @@ function List() {
         <Link to={`/${i.fields.slug}`} className="btn btn-link btn-sm mr-2">Details</Link>
         <Addbutton pd={i} />
       </div>
+
     </div>
   })
 
