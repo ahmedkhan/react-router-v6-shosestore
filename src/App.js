@@ -11,10 +11,8 @@ import styles from './components/shared/ProductsGrid.module.css';
 import About from './components/About';
 
 
-
 function App() {
-  const { cartCount } = useContext(listContext);
-
+  const { cartCount } = useContext(listContext); 
   return (
     <div>
       <div className={styles.header}>

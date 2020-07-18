@@ -1,3 +1,4 @@
+
 const client = require('contentful').createClient({
     space: 'iyqknuor22xm',
     accessToken: 'jDH-14tCL1v_8T3vjLzbHWenbDEJZRv2rkEWBwg_e74'
